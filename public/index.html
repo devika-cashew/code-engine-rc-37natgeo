@@ -1,0 +1,47 @@
+<html>
+<head>
+  <base href="/">
+  <title>Robocrowd-Task</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta property="og:image" content="./img/robo-logo.png" />
+  <meta property="og:title" content="Robocrowd-Task" />
+  <meta property="og:description" content="Robocrowd-Task" />
+  <link rel="shortcut icon" href="./img/robo-logo.png" type="image/png">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">  
+  <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam&family=Roboto:wght@100;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div><input type="hidden" id="currentUser" name="currentUser"></div>
+  <div id="contentParent" class="responsive-columns-wrapper">
+    <div id="chat-column-holder" class="responsive-column-no-scroll">
+      <div class="chat-column">
+        <div id="scrollingChat">
+        </div>
+        <!--<p class="user-typing" id="user-typing-field"></p>-->
+        <div id="input-holder" class="inputOutline">
+          <div  class="text-input-div">
+            <input id="textInput" class="input responsive-column" maxlength="200" placeholder="Type here..." type="text" onkeydown="ConversationPanel.inputKeyDown(event, this)"
+              minlength="10">
+          </div>
+          <div  class="send-button-div">
+            <button id="sendIcon" class="send-icon" onclick="ConversationPanel.clickSend()">
+              <i class="fa fa-paper-plane" ></i>
+            </button>   
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/conversation.js"></script>
+  <script src="js/survey-bot.js"></script>
+</body>
+</html>
