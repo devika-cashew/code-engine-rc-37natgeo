@@ -371,6 +371,13 @@ var ConversationPanel = (function () {
         innerhtml: `<audio controls preload="none" src="${gen.source}" type="audio/ogg">Your browser does not support the audio element.</audio>`,
         innerstyle: 'message-inner-video'
       });
+    } else if (gen.response_type === 'video') {
+      console.log(gen.source);
+      responses.push({
+        type: gen.response_type,
+        innerhtml: `<video class='inner-video' autoPlay muted controls width="100%" height="auto"><source src="${gen.source}" type="video/mp4"></video>`,
+        innerstyle: 'message-inner-audio'
+      });
     } else if (gen.response_type === 'pause') {
       responses.push({
         type: gen.response_type,

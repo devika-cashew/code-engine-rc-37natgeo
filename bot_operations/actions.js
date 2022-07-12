@@ -27,29 +27,33 @@ async function writeToDB(params, uid) {
       : admin.app();
 
     const db = admin.firestore();
-    const task = 'DowntonAbbey';
+    const task = 'NatGeo';
     let statusKey = `tasks.${task}.status`, resultKey = `tasks.${task}.result`;
 
     let data = {
       [statusKey]: 'Pending Review',
       [resultKey]: {
-        likelyGoToSkill: params.likelyGoToSkill,
-        launchGet: params.launchGet,
-        launchSomethingElse: params.launchSomethingElse,
-        thinkOfExperience: params.thinkOfExperience,
-        howRelevant: params.howRelevant,
-        doAfterSkill: params.doAfterSkill,
-        factors: params.factors,
-        wellRemember: params.wellRemember,
-        describe: params.describe,
-        likelyToPurchaseTickets: params.likelyToPurchaseTickets,
-        reasonsWatchPremiere: params.reasonsWatchPremiere,
-        optionFirstChoice: params.optionFirstChoice,
-        getLinkOnPhone: params.getLinkOnPhone,
-        satisfiedStartTour: params.satisfiedStartTour,
-        satisfiedPlayTrivia: params.satisfiedPlayTrivia,
-        recommendMovie: params.recommendMovie,
-        hearAudioAd: params.hearAudioAd,
+        findAboutNewSeries: params.findAboutNewSeries,
+        watchedVikingsRise: params.watchedVikingsRise,
+        watchedVikingsRiseYesWhere: params.watchedVikingsRiseYesWhere,
+        watchedVikingsRiseYesInfluenced: params.watchedVikingsRiseYesInfluenced,
+        heardNatGeo: params.heardNatGeo,
+        rateNatGeo: params.rateNatGeo,
+        thinkTrailer: params.thinkTrailer,
+        makeWatchSeries: params.makeWatchSeries,
+        makeWatchSeriesYesWhy: params.makeWatchSeriesYesWhy,
+        makeWatchSeriesNoWhy: params.makeWatchSeriesNoWhy,
+        nowTVSubscriber: params.nowTVSubscriber,
+        watchedVikings: params.watchedVikings,
+        watchedVikingsYesWhere: params.watchedVikingsYesWhere,
+        netflixSubscriber: params.netflixSubscriber,
+        cableOperator: params.cableOperator,
+        ngChannelKnow: params.ngChannelKnow,
+        ngChannelNumber: params.ngChannelNumber,
+        otherCableOperator: params.otherCableOperator,
+        otherDocumentariesWatch: params.otherDocumentariesWatch,
+        otherDocumentariesOther: params.otherDocumentariesOther,
+        rateNatGeoAfterTrailer: params.rateNatGeoAfterTrailer
       }
     }
 

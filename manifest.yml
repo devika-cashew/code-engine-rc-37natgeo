@@ -1,5 +1,5 @@
 applications:
-- name: robocrowd-downtonabbey-task
+- name: robocrowd-nat-geo-task
   command: npm start
   path: .
   memory: 128M
