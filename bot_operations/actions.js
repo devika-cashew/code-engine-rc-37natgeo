@@ -27,33 +27,36 @@ async function writeToDB(params, uid) {
       : admin.app();
 
     const db = admin.firestore();
-    const task = 'NatGeo';
+    const task = 'NatGeo2';
     let statusKey = `tasks.${task}.status`, resultKey = `tasks.${task}.result`;
 
     let data = {
       [statusKey]: 'Pending Review',
       [resultKey]: {
-        findAboutNewSeries: params.findAboutNewSeries,
-        watchedVikingsRise: params.watchedVikingsRise,
-        watchedVikingsRiseYesWhere: params.watchedVikingsRiseYesWhere,
-        watchedVikingsRiseYesInfluenced: params.watchedVikingsRiseYesInfluenced,
         heardNatGeo: params.heardNatGeo,
-        rateNatGeo: params.rateNatGeo,
-        thinkTrailer: params.thinkTrailer,
-        makeWatchSeries: params.makeWatchSeries,
-        makeWatchSeriesYesWhy: params.makeWatchSeriesYesWhy,
-        makeWatchSeriesNoWhy: params.makeWatchSeriesNoWhy,
-        nowTVSubscriber: params.nowTVSubscriber,
-        watchedVikings: params.watchedVikings,
-        watchedVikingsYesWhere: params.watchedVikingsYesWhere,
-        netflixSubscriber: params.netflixSubscriber,
-        cableOperator: params.cableOperator,
-        ngChannelKnow: params.ngChannelKnow,
-        ngChannelNumber: params.ngChannelNumber,
-        otherCableOperator: params.otherCableOperator,
-        otherDocumentariesWatch: params.otherDocumentariesWatch,
-        otherDocumentariesOther: params.otherDocumentariesOther,
-        rateNatGeoAfterTrailer: params.rateNatGeoAfterTrailer
+heardNatGeoRate: params.heardNatGeoRate,
+heardNatGeoWatchContent: params.heardNatGeoWatchContent,
+heardNatGeoListContent: params.heardNatGeoListContent,
+watchedAirCrash: params.watchedAirCrash,
+watchedAirCrashYesWhere: params.watchedAirCrashYesWhere,
+watchedAirCrashYesRate: params.watchedAirCrashYesRate,
+watchedAirCrashYesLike: params.watchedAirCrashYesLike,
+watchedAirCrashNoTrailer: params.watchedAirCrashNoTrailer,
+watchedRunningWild: params.watchedRunningWild,
+watchedRunningWildYesWhere: params.watchedRunningWildYesWhere,
+watchedRunningWildYesRate: params.watchedRunningWildYesRate,
+watchedRunningWildYesLike: params.watchedRunningWildYesLike,
+watchedRunningWildNoTrailer: params.watchedRunningWildNoTrailer,
+watchedPrimalSurvivor: params.watchedPrimalSurvivor,
+watchedPrimalSurvivorYesWhere: params.watchedPrimalSurvivorYesWhere,
+watchedPrimalSurvivorYesRate: params.watchedPrimalSurvivorYesRate,
+watchedPrimalSurvivorYesLike: params.watchedPrimalSurvivorYesLike,
+watchedPrimalSurvivorNoTrailer: params.watchedPrimalSurvivorNoTrailer,
+watchedEurope: params.watchedEurope,
+watchedEuropeYesWhere: params.watchedEuropeYesWhere,
+watchedEuropeYesRate: params.watchedEuropeYesRate,
+watchedEuropeYesLike: params.watchedEuropeYesLike,
+watchedEuropeNoTrailer: params.watchedEuropeNoTrailer
       }
     }
 

@@ -1,5 +1,5 @@
 applications:
-- name: robocrowd-nat-geo-task
+- name: robocrowd-nat-geo2-task
   command: npm start
   path: .
   memory: 128M
