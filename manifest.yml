@@ -1,5 +1,5 @@
 applications:
-- name: rc-19coke1-task
+- name: rc-multiselect-eg
   command: npm start
   path: .
   memory: 128M

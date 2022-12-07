@@ -27,7 +27,7 @@ async function writeToDB(params, uid) {
       : admin.app();
 
     const db = admin.firestore();
-    const task = '19Coke1';
+    const task = 'MultiSelect';
     let statusKey = `tasks.${task}.status`, resultKey = `tasks.${task}.result`;
 
     let data = {
@@ -35,27 +35,8 @@ async function writeToDB(params, uid) {
       [resultKey]: {
         rateBrand: params.rateBrand,
         rateOpeningLine: params.rateOpeningLine,
-        howEntertaining: params.howEntertaining,
-        howBoring: params.howBoring,
-        howSurprising: params.howSurprising,
-        howInnovative: params.howInnovative,
-        rateMusic: params.rateMusic,
-        rateSoundEffects: params.rateSoundEffects,
-        rateVoice: params.rateVoice,
-        howFamiliarVoice: params.howFamiliarVoice,
-        likelyRecommend: params.likelyRecommend,
-        wellRemember: params.wellRemember,
-        howManyResponses: params.howManyResponses,
-        howFar: params.howFar,
-        gavePhone: params.gavePhone,
-        thinkDuration: params.thinkDuration,
-        shorterScoredPositively: params.shorterScoredPositively,
-        longerScoredPositively: params.longerScoredPositively,
-        rateNavigation: params.rateNavigation,
-        rateBrandAfterSkill: params.rateBrandAfterSkill,
-        howTrustworthy: params.howTrustworthy,
-        likelyDiscoverMore: params.likelyDiscoverMore,
-        likelyBuyProduct: params.likelyBuyProduct
+        likeAboutSkill: params.likeAboutSkill,
+        howEntertaining: params.howEntertaining
       }
     }
 
