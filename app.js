@@ -55,7 +55,7 @@ var assistant = new AssistantV2({
 });
 
 // Endpoint to be call from the client side
-app.post('/api/message', function(req, res) {
+app.post('/api/message', function (req, res) {
   let assistantId = process.env.ASSISTANT_ID || '<assistant-id>';
   if (!assistantId || assistantId === '<assistant-id>') {
     logger.log('error', 'Server error message displayed to user - Watson configuration error (E.g.: ASSISTANT_ID not set)');
@@ -88,30 +88,30 @@ app.post('/api/message', function(req, res) {
   };
 
   // Send the input to the assistant service
-  assistant.message(payload, async function(err, data) {
+  assistant.message(payload, async function (err, data) {
     if (err) {
       const status = err.code !== undefined && err.code > 0 ? err.code : 500;
       return res.status(status).json(err);
     }
 
-    if(data.result.output.actions) {
+    if (data.result.output.actions) {
       let result = data.result;
 
       let actionResultResponse = await actions.handleActions(result.output.actions[0], uid);
       let actionResultKey = Object.keys(actionResultResponse)[0], actionResultValue = Object.values(actionResultResponse)[0];
 
-      if(result.context.skills['main skill'].user_defined) {
+      if (result.context.skills['main skill'].user_defined) {
         result.context.skills['main skill'].user_defined[actionResultKey] = actionResultValue;
       } else {
-        result.context.skills['main skill'].user_defined = {[actionResultKey]: actionResultValue};
+        result.context.skills['main skill'].user_defined = { [actionResultKey]: actionResultValue };
       }
 
       if (result.output.actions[0].name == 'showMultipleOptions') {
         let actionResult = await actions.handleActions(result.output.actions[0]);
-        
-        if(actionResult.display_response) {
+
+        if (actionResult.display_response) {
           let displayResponse = actionResult.display_response;
-          if(result.output.generic) {
+          if (result.output.generic) {
             displayResponse.forEach(function (gen) {
               result.output.generic.push(gen);
             });
@@ -127,12 +127,12 @@ app.post('/api/message', function(req, res) {
   });
 });
 
-app.get('/api/session', function(req, res) {
+app.get('/api/session', function (req, res) {
   assistant.createSession(
     {
       assistantId: process.env.ASSISTANT_ID || '{assistant_id}',
     },
-    function(error, response) {
+    function (error, response) {
       if (error) {
         logger.log('error', `Error while creating session: ${error}`);
         return res.send(error);

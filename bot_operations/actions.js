@@ -15,8 +15,8 @@ async function handleActions(action, uid) {
 }
 
 async function showMultipleOptions(params) {
-  return new Promise(async function(resolve, reject) {
-    let response = { 
+  return new Promise(async function (resolve, reject) {
+    let response = {
       action_response: {
         result: 'SUCCESS'
       },
@@ -24,11 +24,11 @@ async function showMultipleOptions(params) {
         {
           "response_type": "multiSelect",
           "data": params.options
-        }             
+        }
       ]
-  };
-  resolve(response)
-});
+    };
+    resolve(response)
+  });
 
 }
 

@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <base href="/">
   <title>Robocrowd-Task</title>
@@ -9,9 +10,10 @@
   <meta property="og:description" content="Robocrowd-Task" />
   <link rel="shortcut icon" href="./img/robo-logo.png" type="image/png">
   <link rel="stylesheet" href="css/app.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam&family=Roboto:wght@100;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam&family=Roboto:wght@100;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -24,21 +26,22 @@
         </div>
         <!--<p class="user-typing" id="user-typing-field"></p>-->
         <div id="input-holder" class="inputOutline">
-          <div  class="text-input-div">
-            <input id="textInput" class="input responsive-column" maxlength="200" placeholder="Type here..." type="text" onkeydown="ConversationPanel.inputKeyDown(event, this)"
-              minlength="10">
+          <div class="text-input-div">
+            <input id="textInput" class="input responsive-column" maxlength="200" placeholder="Type here..." type="text"
+              onkeydown="ConversationPanel.inputKeyDown(event, this)" minlength="10">
           </div>
-          <div  class="send-button-div">
+          <div class="send-button-div">
             <button id="sendIcon" class="send-icon" onclick="ConversationPanel.clickSend()">
-              <i class="fa fa-paper-plane" ></i>
-            </button>   
+              <i class="fa fa-paper-plane"></i>
+            </button>
           </div>
         </div>
         <div id="input-holder-multi-select" class="inputOutline">
-          <div  class="send-button-div">
-            <button id="sendMultiSelect" class="multi-select-send-button" onclick="ConversationPanel.clickSendMultiSelect()">
+          <div class="send-button-div">
+            <button id="sendMultiSelect" class="multi-select-send-button"
+              onclick="ConversationPanel.clickSendMultiSelect()">
               Send
-            </button>   
+            </button>
           </div>
         </div>
       </div>
@@ -51,4 +54,5 @@
   <script src="js/conversation.js"></script>
   <script src="js/survey-bot.js"></script>
 </body>
+
 </html>

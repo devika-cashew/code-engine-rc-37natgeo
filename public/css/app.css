@@ -108,7 +108,8 @@ div {
 }
 
 #scrollingChat {
-  margin: 0.5rem 0.2rem 0 0.6rem;;
+  margin: 0.5rem 0.2rem 0 0.6rem;
+  ;
   overflow-y: auto;
   overflow-x: hidden;
   flex: 1;
@@ -197,16 +198,17 @@ div {
   .bot-icon-div {
     width: 9%;
   }
-  
+
   .from-watson {
     margin-left: 9%;
   }
 }
+
 @media only screen and (max-width: 350px) {
   .bot-icon-div {
     width: 12%;
   }
-  
+
   .from-watson {
     margin-left: 12%;
   }
@@ -299,7 +301,7 @@ div {
 }
 
 #timestamp {
-  text-align: center; 
+  text-align: center;
   color: #ddd;
   font-size: 0.75rem;
 }
@@ -319,7 +321,7 @@ div {
   margin-bottom: -0.125rem;
 }
 
-#textInput:focus { 
+#textInput:focus {
   outline: none !important;
   border-color: #719ECE;
   box-shadow: 0 0 8px #719ECE;
@@ -335,12 +337,12 @@ div {
 
 ::-moz-placeholder {
   color: #87a5c9;
-  opacity:  1;
+  opacity: 1;
 }
 
 input:-moz-placeholder {
   color: #87a5c9;
-  opacity:  1;
+  opacity: 1;
 }
 
 :-ms-input-placeholder {
@@ -376,8 +378,8 @@ input:-moz-placeholder {
 }
 
 #textInputDummy {
-  position:absolute;
-  white-space:pre;
+  position: absolute;
+  white-space: pre;
   top: 0;
   left: -1000%;
   opacity: 0;
@@ -402,7 +404,9 @@ pre {
   color: #54EED0;
 }
 
-.boolean, .null, .number {
+.boolean,
+.null,
+.number {
   color: #CE8EFF;
 }
 
@@ -410,7 +414,7 @@ pre {
   color: #66B7FF;
 }
 
-html{
+html {
   font-size: 16px;
 }
 
@@ -446,9 +450,9 @@ html{
   cursor: pointer;
   display: inline-block;
   font-size: 0.95rem;
-  -moz-box-shadow:    1px 2px 3px 1px #ddd;
+  -moz-box-shadow: 1px 2px 3px 1px #ddd;
   -webkit-box-shadow: 1px 2px 3px 1px #ddd;
-  box-shadow:         1px 2px 3px 1px #ddd;
+  box-shadow: 1px 2px 3px 1px #ddd;
 }
 
 .options-button-image-holder {
@@ -475,10 +479,13 @@ html{
 }
 
 .icon {
-  border: none; /* Remove borders */
-  color: #00B4A0; /* White text */
-  cursor: pointer; /* Mouse pointer on hover */
-  font-size:15px;
+  border: none;
+  /* Remove borders */
+  color: #00B4A0;
+  /* White text */
+  cursor: pointer;
+  /* Mouse pointer on hover */
+  font-size: 15px;
   padding: 2px 3px;
   border-radius: 2px;
   background-color: #fff;
@@ -487,10 +494,12 @@ html{
 }
 
 .material-icons.restart-icon {
-  border: none; /* Remove borders */
-  cursor: pointer; /* Mouse pointer on hover */
+  border: none;
+  /* Remove borders */
+  cursor: pointer;
+  /* Mouse pointer on hover */
   color: #00ff00;
-  font-size:1.2rem;
+  font-size: 1.2rem;
   right: 0px;
   vertical-align: middle;
 }
@@ -503,10 +512,13 @@ html{
 
 
 .send-icon {
-  border: none; /* Remove borders */
-  color: #3879cd; /* White text */
-  cursor: pointer; /* Mouse pointer on hover */
-  font-size:17px;
+  border: none;
+  /* Remove borders */
+  color: #3879cd;
+  /* White text */
+  cursor: pointer;
+  /* Mouse pointer on hover */
+  font-size: 17px;
   padding: 2px 5px;
   border-radius: 2px;
   background: none;
@@ -520,10 +532,13 @@ html{
 }
 
 .bulb-icon {
-  border: none; /* Remove borders */
-  color: yellow; /* White text */
-  cursor: pointer; /* Mouse pointer on hover */
-  font-size:8px;
+  border: none;
+  /* Remove borders */
+  color: yellow;
+  /* White text */
+  cursor: pointer;
+  /* Mouse pointer on hover */
+  font-size: 8px;
   padding: 0px;
   border-radius: 1px;
   background: none;
@@ -585,8 +600,8 @@ html{
   text-align: center;
   overflow: hidden;
   scroll-snap-points-x: repeat(300px);
-  scroll-snap-type: mandatory;   
-  box-sizing: border-box; 
+  scroll-snap-type: mandatory;
+  box-sizing: border-box;
 }
 
 .slides {
@@ -594,11 +609,11 @@ html{
   overflow-x: scroll;
   overflow-y: hidden;
   height: 150px;
-  
+
   border-radius: 4px;
-  
+
   scroll-behavior: smooth;
-  
+
   -webkit-overflow-scrolling: touch;
   scroll-snap-points-x: repeat(300px);
   scroll-snap-type: mandatory;
@@ -615,10 +630,12 @@ html{
   width: 10px;
   height: 10px;
 }
+
 .slides::-webkit-scrollbar-thumb {
   background: #90A4AE;
   border-radius: 10px;
 }
+
 .slides::-webkit-scrollbar-track {
   background: transparent;
   margin: 10px;
@@ -626,13 +643,15 @@ html{
 
 @media only screen and (max-width: 450px) {
   .slides::-webkit-scrollbar {
-    width: 0;  
-    background: transparent;  
+    width: 0;
+    background: transparent;
   }
+
   .slides::-webkit-scrollbar-thumb {
     background: transparent;
     border-radius: 0px;
   }
+
   .slides::-webkit-scrollbar-track {
     background: transparent;
   }
@@ -659,7 +678,7 @@ html{
   }
 }
 
-.slider > a {
+.slider>a {
   display: inline-flex;
   width: 1.5rem;
   height: 1.5rem;
@@ -671,10 +690,12 @@ html{
   margin: 0 0 0.5rem 0;
   position: relative;
 }
-.slider > a:active {
+
+.slider>a:active {
   top: 1px;
 }
-.slider > a:focus {
+
+.slider>a:focus {
   background: #000;
 }
 
@@ -697,9 +718,9 @@ html{
   cursor: pointer;
   display: inline-block;
   font-size: 0.95rem;
-  -moz-box-shadow:    1px 2px 3px 1px #ddd;
+  -moz-box-shadow: 1px 2px 3px 1px #ddd;
   -webkit-box-shadow: 1px 2px 3px 1px #ddd;
-  box-shadow:         1px 2px 3px 1px #ddd;
+  box-shadow: 1px 2px 3px 1px #ddd;
 }
 
 /* Hide the browser's default checkbox */
@@ -722,12 +743,12 @@ html{
 }
 
 /* On mouse-over, add a grey background color */
-.multi-select-button:hover input ~ .checkmark {
+.multi-select-button:hover input~.checkmark {
   background-color: #fff;
 }
 
 /* When the checkbox is checked, add a blue background */
-.multi-select-button input:checked ~ .checkmark {
+.multi-select-button input:checked~.checkmark {
   background-color: #fff;
 }
 
@@ -739,7 +760,7 @@ html{
 }
 
 /* Show the checkmark when checked */
-.multi-select-button input:checked ~ .checkmark:after {
+.multi-select-button input:checked~.checkmark:after {
   display: block;
 }
 
@@ -756,8 +777,7 @@ html{
   transform: rotate(45deg);
 }
 
-.multi-select-send-button
-{
+.multi-select-send-button {
   color: #3366FF;
   background-color: #fff;
   border: 1px solid #3366FF;
@@ -767,7 +787,7 @@ html{
   cursor: pointer;
   display: inline-block;
   font-size: 0.95rem;
-  -moz-box-shadow:    1px 2px 3px 1px #ddd;
+  -moz-box-shadow: 1px 2px 3px 1px #ddd;
   -webkit-box-shadow: 1px 2px 3px 1px #ddd;
-  box-shadow:         1px 2px 3px 1px #ddd;
+  box-shadow: 1px 2px 3px 1px #ddd;
 }
