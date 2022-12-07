@@ -1,5 +1,5 @@
 applications:
-- name: robocrowd-nat-geo2-task
+- name: rc-19coke1-task
   command: npm start
   path: .
   memory: 128M

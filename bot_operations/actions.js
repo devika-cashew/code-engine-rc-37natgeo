@@ -27,36 +27,35 @@ async function writeToDB(params, uid) {
       : admin.app();
 
     const db = admin.firestore();
-    const task = 'NatGeo2';
+    const task = '19Coke1';
     let statusKey = `tasks.${task}.status`, resultKey = `tasks.${task}.result`;
 
     let data = {
       [statusKey]: 'Pending Review',
       [resultKey]: {
-        heardNatGeo: params.heardNatGeo,
-        heardNatGeoRate: params.heardNatGeoRate,
-        heardNatGeoWatchContent: params.heardNatGeoWatchContent,
-        heardNatGeoListContent: params.heardNatGeoListContent,
-        watchedAirCrash: params.watchedAirCrash,
-        watchedAirCrashYesWhere: params.watchedAirCrashYesWhere,
-        watchedAirCrashYesRate: params.watchedAirCrashYesRate,
-        watchedAirCrashYesLike: params.watchedAirCrashYesLike,
-        watchedAirCrashNoTrailer: params.watchedAirCrashNoTrailer,
-        watchedRunningWild: params.watchedRunningWild,
-        watchedRunningWildYesWhere: params.watchedRunningWildYesWhere,
-        watchedRunningWildYesRate: params.watchedRunningWildYesRate,
-        watchedRunningWildYesLike: params.watchedRunningWildYesLike,
-        watchedRunningWildNoTrailer: params.watchedRunningWildNoTrailer,
-        watchedPrimalSurvivor: params.watchedPrimalSurvivor,
-        watchedPrimalSurvivorYesWhere: params.watchedPrimalSurvivorYesWhere,
-        watchedPrimalSurvivorYesRate: params.watchedPrimalSurvivorYesRate,
-        watchedPrimalSurvivorYesLike: params.watchedPrimalSurvivorYesLike,
-        watchedPrimalSurvivorNoTrailer: params.watchedPrimalSurvivorNoTrailer,
-        watchedEurope: params.watchedEurope,
-        watchedEuropeYesWhere: params.watchedEuropeYesWhere,
-        watchedEuropeYesRate: params.watchedEuropeYesRate,
-        watchedEuropeYesLike: params.watchedEuropeYesLike,
-        watchedEuropeNoTrailer: params.watchedEuropeNoTrailer
+        rateBrand: params.rateBrand,
+        rateOpeningLine: params.rateOpeningLine,
+        howEntertaining: params.howEntertaining,
+        howBoring: params.howBoring,
+        howSurprising: params.howSurprising,
+        howInnovative: params.howInnovative,
+        rateMusic: params.rateMusic,
+        rateSoundEffects: params.rateSoundEffects,
+        rateVoice: params.rateVoice,
+        howFamiliarVoice: params.howFamiliarVoice,
+        likelyRecommend: params.likelyRecommend,
+        wellRemember: params.wellRemember,
+        howManyResponses: params.howManyResponses,
+        howFar: params.howFar,
+        gavePhone: params.gavePhone,
+        thinkDuration: params.thinkDuration,
+        shorterScoredPositively: params.shorterScoredPositively,
+        longerScoredPositively: params.longerScoredPositively,
+        rateNavigation: params.rateNavigation,
+        rateBrandAfterSkill: params.rateBrandAfterSkill,
+        howTrustworthy: params.howTrustworthy,
+        likelyDiscoverMore: params.likelyDiscoverMore,
+        likelyBuyProduct: params.likelyBuyProduct
       }
     }
 
