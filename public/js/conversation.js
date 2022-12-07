@@ -17,13 +17,16 @@ var ConversationPanel = (function () {
     }
   };
 
+  let multiSelectOptions = [];
+
   // Publicly accessible methods defined
   return {
     launchBot: launchBot,
     init: init,
     inputKeyDown: inputKeyDown,
     sendMessage: sendMessage,
-    clickSend: clickSend
+    clickSend: clickSend,
+    clickSendMultiSelect: clickSendMultiSelect
   };
 
   function launchBot(text) {
@@ -68,7 +71,6 @@ var ConversationPanel = (function () {
         if (result.output.actions) {
           if (result.output.actions[0].name == 'saveTaskInfo') {
             //if(result.)
-            console.log(JSON.stringify(result, null, 2));
             if (result.context.skills['main skill'].user_defined.save_task_info_result &&
               result.context.skills['main skill'].user_defined.save_task_info_result != null) {
               (window["ReactNativeWebView"] || window).postMessage(result.context.skills['main skill'].user_defined.save_task_info_result);
@@ -85,6 +87,9 @@ var ConversationPanel = (function () {
 
             if (result.output.actions[0].parameters.minlength)
               $("#textInput").attr("minlength", result.output.actions[0].parameters.minlength);
+          }
+          else if (result.output.actions[0].name == 'showMultipleOptions') {
+            $("#input-holder-multi-select").show();
           }
         }
       }
@@ -342,6 +347,25 @@ var ConversationPanel = (function () {
     return carouselHTML;
   }
 
+  function getMultiSelectItems(data) {
+    let itemsList = '<div id="multi-select-container">';
+    multiSelectOptions = data;
+
+    for (i = 0; i < data.length; i++) {
+      itemsList +=
+        `<label class="multi-select-button">&nbsp;&nbsp;&nbsp;${data[i]}
+          <input type="checkbox" id="${data[i]}" value="${data[i]}">
+          <span class="checkmark"></span>
+        </label>`
+    }
+
+    itemsList += '</div>';
+
+    let multiSelectHTML = `${itemsList}`
+
+    return multiSelectHTML;
+  }
+
   function getResponse(responses, gen) {
     var title = '', description = '';
     if (gen.hasOwnProperty('title') && gen.title.trim != '') {
@@ -365,14 +389,12 @@ var ConversationPanel = (function () {
         innerstyle: 'message-inner'
       });
     } else if (gen.response_type === 'audio') {
-      console.log(gen.source);
       responses.push({
         type: gen.response_type,
         innerhtml: `<audio controls preload="none" src="${gen.source}" type="audio/ogg">Your browser does not support the audio element.</audio>`,
         innerstyle: 'message-inner-video'
       });
     } else if (gen.response_type === 'video') {
-      console.log(gen.source);
       responses.push({
         type: gen.response_type,
         innerhtml: `<video class='inner-video' autoPlay muted controls width="100%" height="auto"><source src="${gen.source}" type="video/mp4"></video>`,
@@ -414,6 +436,14 @@ var ConversationPanel = (function () {
         type: gen.response_type,
         innerhtml: itemsList,
         innerstyle: 'message-inner-carousel'
+      });
+    } else if (gen.response_type === 'multiSelect') {
+      let itemsList = getMultiSelectItems(gen.data);
+      responses.push({
+        id: 'multi-select-replies',
+        type: 'multi-select',
+        innerhtml: itemsList,
+        innerstyle: 'message-inner-multi-select'
       });
     }
   }
@@ -473,6 +503,9 @@ var ConversationPanel = (function () {
     if (document.getElementById("cashew-video")) {
       document.getElementById("cashew-video").remove();
     }
+    if (document.getElementById("multi-select-replies")) {
+      document.getElementById("multi-select-replies").remove();
+    }
 
     disableSendButton();
     // Send the user message
@@ -490,6 +523,8 @@ var ConversationPanel = (function () {
       }
 
       $("#input-holder").hide();
+      $("#input-holder-multi-select").hide();
+
       sendMessage(inputBox.value, context);
 
       // Clear input box for further messages
@@ -508,10 +543,34 @@ var ConversationPanel = (function () {
     }
 
     $("#input-holder").hide();
+    $("#input-holder-multi-select").hide();
+
     sendMessage(inputBox.value, context);
 
     // Clear input box for further messages
     inputBox.value = '';
     Common.fireEvent(inputBox, 'input');
+  }
+
+  function clickSendMultiSelect() {
+    let context;
+    let latestResponse = Api.getResponsePayload();
+    if (latestResponse) {
+      context = latestResponse.context;
+    }
+
+    //READING CHECKBOXES VALUES
+    let chosen = [];
+    for(o of multiSelectOptions) {
+      if(document.getElementById(o).checked)
+        chosen.push(o);
+    }
+
+    if(chosen.length < 1) {
+      chosen = '<None>';
+    }
+
+    $("#input-holder-multi-select").hide();
+    sendMessage(chosen.toString(), context);
   }
 }());

@@ -7,9 +7,29 @@ async function handleActions(action, uid) {
   switch (action.name) {
     case "saveTaskInfo":
       result = await saveTaskInfo(action.parameters, uid);
-      break;
+      return { save_task_info_result: result };
+    case "showMultipleOptions":
+      result = await showMultipleOptions(action.parameters, uid);
+      return result;
   }
-  return { save_task_info_result: result };
+}
+
+async function showMultipleOptions(params) {
+  return new Promise(async function(resolve, reject) {
+    let response = { 
+      action_response: {
+        result: 'SUCCESS'
+      },
+      display_response: [
+        {
+          "response_type": "multiSelect",
+          "data": params.options
+        }             
+      ]
+  };
+  resolve(response)
+});
+
 }
 
 async function saveTaskInfo(params, uid) {

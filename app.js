@@ -106,6 +106,21 @@ app.post('/api/message', function(req, res) {
         result.context.skills['main skill'].user_defined = {[actionResultKey]: actionResultValue};
       }
 
+      if (result.output.actions[0].name == 'showMultipleOptions') {
+        let actionResult = await actions.handleActions(result.output.actions[0]);
+        
+        if(actionResult.display_response) {
+          let displayResponse = actionResult.display_response;
+          if(result.output.generic) {
+            displayResponse.forEach(function (gen) {
+              result.output.generic.push(gen);
+            });
+          } else {
+            result.output.generic = displayResponse;
+          }
+        }
+      }
+
     }
 
     return res.json(data);

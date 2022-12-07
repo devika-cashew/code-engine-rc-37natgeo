@@ -13,7 +13,8 @@ $(document).ready(function() {
 
   //$("#sendIcon").prop("disabled", true);
   $("#input-holder").hide();
-  //$("#textInput").attr("disabled", "disabled");
+  $("#input-holder-multi-select").hide();
+      //$("#textInput").attr("disabled", "disabled");
 });
 
 $("#textInput").on("keyup", function() {
