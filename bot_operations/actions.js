@@ -8,6 +8,8 @@ async function handleActions(action, uid) {
     case "saveTaskInfo":
       result = await saveTaskInfo(action.parameters, uid);
       return { save_task_info_result: result };
+    case "showTextbox":
+      return { showTextbox_result: 'SUCCESS' };
     case "showMultipleOptions":
       result = await showMultipleOptions(action.parameters, uid);
       return result;
@@ -47,16 +49,24 @@ async function writeToDB(params, uid) {
       : admin.app();
 
     const db = admin.firestore();
-    const task = 'MultiSelect';
+    const task = '26TAUK1';
     let statusKey = `tasks.${task}.status`, resultKey = `tasks.${task}.result`;
 
     let data = {
       [statusKey]: 'Pending Review',
       [resultKey]: {
-        rateBrand: params.rateBrand,
-        rateOpeningLine: params.rateOpeningLine,
-        likeAboutSkill: params.likeAboutSkill,
-        howEntertaining: params.howEntertaining
+        destinationsHeard: params.destinationsHeard,
+        destinationsAdvertised: params.destinationsAdvertised,
+        opinionAD: params.opinionAD,
+        articlesEffective: params.articlesEffective,
+        travelShowsEffective: params.travelShowsEffective,
+        radioAdsEffective: params.radioAdsEffective,
+        digitalAdsEffective: params.digitalAdsEffective,
+        contentBookTravelShows: params.contentBookTravelShows,
+        contentBookRadioAds: params.contentBookRadioAds,
+        contentBookDigitalContent: params.contentBookDigitalContent,
+        nextLikelyChoose: params.nextLikelyChoose,
+        nextHowLikelyAD: params.nextHowLikelyAD,
       }
     }
 
