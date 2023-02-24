@@ -1,5 +1,5 @@
 applications:
-- name: rc-26tauk1-task
+- name: rc-32tadduka-task
   command: npm start
   path: .
   memory: 128M
