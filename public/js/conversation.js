@@ -237,7 +237,7 @@ var ConversationPanel = (function () {
               'children': [{
                 'tagName': 'img',
                 'classNames': ['bot-icon'],
-                'attributes': [{ name: 'src', value: '../img/rc-logo.svg' }]
+                'attributes': [{ name: 'src', value: '../img/robo-logo.png' }]
               }]
             }]
           },
