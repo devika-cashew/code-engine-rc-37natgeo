@@ -49,26 +49,22 @@ async function writeToDB(params, uid) {
       : admin.app();
 
     const db = admin.firestore();
-    const task = '32TADDUKA';
+    const task = '37NatGeo';
     let statusKey = `tasks.${task}.status`, resultKey = `tasks.${task}.result`;
 
     let data = {
       [statusKey]: 'Pending Review',
       [resultKey]: {
-        todaysDestination: params.todaysDestination,
-        pathChosenAfterOpening: params.pathChosenAfterOpening,
-        pathQuality: params.pathQuality,
-        whyChoseFeature: params.whyChoseFeature,
-        rateSkill: params.rateSkill,
-        attributesEnhance: params.attributesEnhance,
-        attributesEnhanceOther: params.attributesEnhanceOther,
-        howInformative: params.howInformative,
-        howMuchEnjoy: params.howMuchEnjoy,
-        preferenceInteraction: params.preferenceInteraction,
-        likelyBookTrip: params.likelyBookTrip,
-        otherDestinations: params.otherDestinations,
-        attributesAssociateExp: params.attributesAssociateExp,
-        brand: params.brand,
+        visitedTVGuide: params.visitedTVGuide,
+        tvSeriesHeard: params.tvSeriesHeard,
+        tvSeriesSeen: params.tvSeriesSeen,
+        channelTempted: params.channelTempted,
+        likelyWatchAirCI: params.likelyWatchAirCI,
+        likelyWatchTraficked: params.likelyWatchTraficked,
+        likelyWatchCarSOS: params.likelyWatchCarSOS,
+        editorialsEffective: params.editorialsEffective,
+        nextTimeWatchLikely: params.nextTimeWatchLikely,
+        nextTimeNGC: params.nextTimeNGC,
       }
     }
 

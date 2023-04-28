@@ -375,11 +375,13 @@ var ConversationPanel = (function () {
       description = '<div>' + gen.description + '</div>';
     }
     if (gen.response_type === 'image') {
-      var img = '<div><img src="' + gen.source + '" width="300"></div>';
+      var img = `<a href="${gen.source}" target="_blank">
+          <img width="100%" border="0" align="center"  src="${gen.source}"/>
+        </a>'`
       responses.push({
         type: gen.response_type,
         innerhtml: title + description + img,
-        innerstyle: 'message-inner'
+        innerstyle: 'message-inner2'
       });
     } else if (gen.response_type === 'text') {
       gen.text = gen.text.replace(/(?:\r\n|\r|\n)/g, '<br>');
@@ -561,12 +563,12 @@ var ConversationPanel = (function () {
 
     //READING CHECKBOXES VALUES
     let chosen = [];
-    for(o of multiSelectOptions) {
-      if(document.getElementById(o).checked)
+    for (o of multiSelectOptions) {
+      if (document.getElementById(o).checked)
         chosen.push(o);
     }
 
-    if(chosen.length < 1) {
+    if (chosen.length < 1) {
       chosen = '<None>';
     }
 

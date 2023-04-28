@@ -1,5 +1,5 @@
 applications:
-- name: rc-32tadduka-task
+- name: rc-37natgeo-task
   command: npm start
   path: .
   memory: 128M
